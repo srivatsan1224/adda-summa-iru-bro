@@ -1,6 +1,6 @@
 // src/config/apiConfig.ts (for VITE)
 
-let baseUrl = 'http://localhost:5000/api'; // Default
+let baseUrl = 'http://localhost:3000/api'; // Default
 
 if (import.meta.env.VITE_API_URL) {
   baseUrl = import.meta.env.VITE_API_URL;

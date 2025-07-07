@@ -82,13 +82,20 @@ const ParttimeJobCard: React.FC<JobCardProps> = ({ job }) => {
             <Clock size={14} />
             <span>{job.jobType}</span>
           </div>
-          <div className="flex items-center gap-1">
-            <DollarSign size={14} />
-            <span>
-              ₹{job.salaryRange.min}-{job.salaryRange.max}/
-              {job.salaryRange.unit}
-            </span>
-          </div>
+          {job.salaryRange ? (
+  <div className="flex items-center gap-1">
+    <DollarSign size={14} />
+    <span>
+      ₹{job.salaryRange.min}-{job.salaryRange.max}/{job.salaryRange.unit}
+    </span>
+  </div>
+) : (
+  <div className="flex items-center gap-1">
+    <DollarSign size={14} />
+    <span>Salary not disclosed</span>
+  </div>
+)}
+
         </div>
 
         {/* Tags */}
